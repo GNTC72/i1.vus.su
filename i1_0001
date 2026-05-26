@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="ИП Чащин Г.Н. – профессиональные услуги, консалтинг и IT-решения. Надёжность, опыт, индивидуальный подход.">
+  <title>ИП Чащин Г.Н. | Официальный сайт</title>
+  <!-- Google Fonts + Font Awesome 6 -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #e2e8f0;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #94a3b8;
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #475569;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section {
+      scroll-margin-top: 85px;
+      padding: 5rem 0;
+    }
+
+    h1, h2, h3 {
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      position: relative;
+      display: inline-block;
+    }
+    h2:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #1e3a8a, #3b82f6);
+      border-radius: 4px;
+    }
+
+    .section-sub {
+      color: #334155;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+
+    /* header */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #e2e8f0;
+      padding: 1rem 0;
+    }
+
+    .nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.02em;
+    }
+    .logo span {
+      background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #1e293b;
+      font-weight: 500;
+      transition: 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #2563eb;
+    }
+
+    /* buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: transparent;
+      border: 1px solid #3b82f6;
+      padding: 0.7rem 1.6rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: #1e293b;
+    }
+
+    .btn-primary {
+      background: #2563eb;
+      border: none;
+      color: white;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+    }
+    .btn-primary:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+    }
+
+    .btn-outline {
+      border-color: #cbd5e1;
+      color: #1e293b;
+    }
+    .btn-outline:hover {
+      border-color: #3b82f6;
+      background: rgba(59, 130, 246, 0.05);
+    }
+
+    /* hero */
+    .hero {
+      padding: 5rem 0 3rem;
+      background: linear-gradient(135deg, #f1f5f9 0%, #ffffff 100%);
+    }
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .hero-badge {
+      background: #e0e7ff;
+      color: #1e40af;
+      display: inline-block;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      width: fit-content;
+    }
+    .hero h1 {
+      font-size: 3.2rem;
+      line-height: 1.2;
+      max-width: 800px;
+    }
+    .gradient-text {
+      background: linear-gradient(to right, #1e3a8a, #3b82f6, #2563eb);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: #334155;
+      max-width: 620px;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
+
+    /* about + skills */
+    .about-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+    .about-text {
+      flex: 2;
+    }
+    .about-text p {
+      margin-bottom: 1.2rem;
+      font-size: 1.05rem;
+      color: #1e293b;
+    }
+    .info-card {
+      flex: 1.5;
+      background: white;
+      border-radius: 28px;
+      padding: 1.8rem;
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
+      border: 1px solid #e2e8f0;
+    }
+    .info-card h3 {
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+    .info-detail {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      color: #0f172a;
+    }
+    .info-item i {
+      width: 28px;
+      color: #2563eb;
+    }
+
+    /* услуги (services) */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+    .service-card {
+      background: white;
+      border-radius: 24px;
+      padding: 1.8rem;
+      transition: all 0.25s;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: #b9d0ff;
+      box-shadow: 0 20px 25px -12px rgba(0,0,0,0.1);
+    }
+    .service-icon {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: #2563eb;
+    }
+    .service-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.75rem;
+    }
+    .service-desc {
+      color: #334155;
+    }
+
+    /* кейсы / проекты */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .project-card {
+      background: white;
+      border-radius: 24px;
+      padding: 1.5rem;
+      border: 1px solid #e2e8f0;
+      transition: 0.2s;
+    }
+    .project-card:hover {
+      border-color: #3b82f6;
+      box-shadow: 0 12px 20px -12px rgba(0,0,0,0.1);
+    }
+    .project-card h3 {
+      margin-bottom: 0.5rem;
+    }
+    .project-desc {
+      color: #475569;
+      margin: 0.8rem 0 1rem;
+    }
+
+    /* контакты */
+    .contact-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+    .contact-item {
+      background: white;
+      padding: 1.4rem 1.8rem;
+      border-radius: 28px;
+      text-align: center;
+      flex: 1;
+      min-width: 200px;
+      border: 1px solid #e2e8f0;
+      transition: 0.2s;
+    }
+    .contact-item i {
+      font-size: 2rem;
+      color: #2563eb;
+      margin-bottom: 0.6rem;
+    }
+    .contact-item h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.4rem;
+    }
+    .contact-item a, .contact-item p {
+      text-decoration: none;
+      color: #1f2937;
+      font-weight: 500;
+    }
+    .contact-item a:hover {
+      color: #2563eb;
+    }
+    .contact-item:hover {
+      transform: scale(1.02);
+      border-color: #94a3f8;
+    }
+
+    footer {
+      border-top: 1px solid #e2e8f0;
+      padding: 2rem 0;
+      text-align: center;
+      color: #475569;
+      background: #f9fafb;
+    }
+
+    @media (max-width: 780px) {
+      .container {
+        padding: 0 1.5rem;
+      }
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      section {
+        padding: 3rem 0;
+      }
+    }
+    @media (max-width: 480px) {
+      .hero-buttons .btn {
+        padding: 0.5rem 1.2rem;
+        font-size: 0.85rem;
+      }
+    }
+    .fade-up {
+      animation: fadeUp 0.5s ease forwards;
+    }
+    @keyframes fadeUp {
+      0% { opacity: 0; transform: translateY(15px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container nav-bar">
+    <div class="logo">ИП <span>Чащин Г.Н.</span></div>
+    <ul class="nav-links">
+      <li><a href="#home">Главная</a></li>
+      <li><a href="#about">О предпринимателе</a></li>
+      <li><a href="#services">Услуги</a></li>
+      <li><a href="#cases">Кейсы</a></li>
+      <li><a href="#contact">Контакты</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="container hero-content">
+      <span class="hero-badge"><i class="fas fa-briefcase"></i> ИП Чащин Геннадий Николаевич</span>
+      <h1>Надёжные решения для вашего <span class="gradient-text">бизнеса</span> и IT-проектов</h1>
+      <p>Индивидуальный подход, профессиональный опыт и прозрачное сотрудничество. Помогаю бизнесу расти эффективно.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Связаться</a>
+        <a href="#services" class="btn btn-outline"><i class="fas fa-cogs"></i> Услуги</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- О предпринимателе -->
+  <section id="about">
+    <div class="container">
+      <h2>О предпринимателе</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p><strong>Чащин Геннадий Николаевич</strong> – индивидуальный предприниматель с многолетним опытом в сфере управления проектами, IT-консалтинга и оказания профессиональных услуг малому и среднему бизнесу.</p>
+          <p>Основная специализация: помощь компаниям в автоматизации процессов, внедрении цифровых инструментов, юридическом сопровождении сделок и повышении операционной эффективности.</p>
+          <p>Работаю официально, с соблюдением всех требований законодательства. Доверие клиентов — главный приоритет.</p>
+          <p><i class="fas fa-check-circle" style="color:#2563eb;"></i> Более 7 лет успешной предпринимательской деятельности.<br>
+          <i class="fas fa-handshake"></i> Ответственный подход и индивидуальные условия.</p>
+        </div>
+        <div class="info-card">
+          <h3><i class="fas fa-id-card"></i> Реквизиты</h3>
+          <div class="info-detail">
+            <div class="info-item"><i class="fas fa-user"></i> ИП Чащин Геннадий Николаевич</div>
+            <div class="info-item"><i class="fas fa-passport"></i> ОГРНИП: 324500000123456</div>
+            <div class="info-item"><i class="fas fa-code-branch"></i> ИНН: 123456789012</div>
+            <div class="info-item"><i class="fas fa-calendar-alt"></i> Регистрация: 2017 г.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Услуги -->
+  <section id="services">
+    <div class="container">
+      <h2>Услуги</h2>
+      <p class="section-sub">Что я предлагаю как ИП Чащин Г.Н.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+          <h3>Бизнес-консалтинг</h3>
+          <div class="service-desc">Анализ процессов, поиск точек роста, оптимизация затрат и увеличение прибыли.</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+          <h3>IT-сопровождение</h3>
+          <div class="service-desc">Настройка ПО, консультации по автоматизации, выбор CRM/ERP, техподдержка.</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-file-signature"></i></div>
+          <h3>Юридический аутсорсинг</h3>
+          <div class="service-desc">Договорная работа, досудебное урегулирование, правовая экспертиза для бизнеса.</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-globe"></i></div>
+          <h3>Цифровой маркетинг</h3>
+          <div class="service-desc">Разработка сайтов под ключ, SEO продвижение, ведение соцсетей и аналитика.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Кейсы / Проекты -->
+  <section id="cases">
+    <div class="container">
+      <h2>Выполненные проекты</h2>
+      <p class="section-sub">Реальные результаты для моих клиентов</p>
+      <div class="projects-grid">
+        <div class="project-card">
+          <i class="fas fa-store" style="font-size: 2rem; color:#2563eb;"></i>
+          <h3>Автоматизация розничного магазина</h3>
+          <div class="project-desc">Внедрение системы учёта и CRM, сокращение времени обработки заказов на 35%.</div>
+        </div>
+        <div class="project-card">
+          <i class="fas fa-building" style="font-size: 2rem; color:#2563eb;"></i>
+          <h3>Юридическое сопровождение стартапа</h3>
+          <div class="project-desc">Полное оформление договоров с инвесторами, регистрация товарного знака.</div>
+        </div>
+        <div class="project-card">
+          <i class="fas fa-chalkboard-user" style="font-size: 2rem; color:#2563eb;"></i>
+          <h3>Корпоративный портал для ООО «СтройСервис»</h3>
+          <div class="project-desc">Разработка внутреннего портала, обучение сотрудников, поддержка 24/7.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Контакты -->
+  <section id="contact">
+    <div class="container">
+      <h2>Контакты</h2>
+      <p class="section-sub">Свяжитесь со мной удобным способом</p>
+      <div class="contact-cards">
+        <div class="contact-item">
+          <i class="fas fa-phone-alt"></i>
+          <h4>Телефон</h4>
+          <a href="tel:+79001234567">+7 (900) 123-45-67</a>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <h4>Эл. почта</h4>
+          <a href="mailto:chashchin@ip.ru">chashchin@ip.ru</a>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-telegram"></i>
+          <h4>Telegram</h4>
+          <a href="https://t.me/chashchin_gn" target="_blank">@chashchin_gn</a>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-whatsapp"></i>
+          <h4>WhatsApp</h4>
+          <a href="https://wa.me/79001234567" target="_blank">Написать в WhatsApp</a>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 2rem;">
+        <a href="#" class="btn btn-outline" id="copyPhoneBtn"><i class="far fa-copy"></i> Скопировать номер телефона</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 ИП Чащин Геннадий Николаевич. Все права защищены.</p>
+    <p style="margin-top: 0.5rem; font-size: 0.8rem;">ОГРНИП 324500000123456 | ИНН 123456789012 | Сайт разработан для GitHub Pages</p>
+  </div>
+</footer>
+
+<script>
+  // копирование номера
+  const copyBtn = document.getElementById('copyPhoneBtn');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const phone = '+7 (900) 123-45-67';
+      navigator.clipboard.writeText(phone).then(() => {
+        const original = copyBtn.innerHTML;
+        copyBtn.innerHTML = '<i class="fas fa-check"></i> Скопировано!';
+        setTimeout(() => {
+          copyBtn.innerHTML = original;
+        }, 2000);
+      }).catch(() => {
+        alert('Номер: ' + phone);
+      });
+    });
+  }
+
+  // активная навигация при скролле
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  function setActive() {
+    let current = '';
+    const scrollPos = window.scrollY + 120;
+    sections.forEach(section => {
+      const top = section.offsetTop;
+      const height = section.clientHeight;
+      if (scrollPos >= top && scrollPos < top + height) {
+        current = section.getAttribute('id');
+      }
+    });
+    navLinks.forEach(link => {
+      link.style.color = '';
+      link.style.fontWeight = '500';
+      if (link.getAttribute('href') === `#${current}`) {
+        link.style.color = '#2563eb';
+        link.style.fontWeight = '600';
+      }
+    });
+  }
+  window.addEventListener('scroll', setActive);
+  window.addEventListener('load', setActive);
+</script>
+</body>
+</html>
