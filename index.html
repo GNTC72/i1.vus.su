@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="ИП Чащин Г.Н. – профессиональные услуги, консалтинг и IT-решения. Надёжность, опыт, индивидуальный подход.">
-  <title>ИП Чащин Г.Н. | Официальный сайт</title>
+  <meta name="description" content="ИП Чащин Геннадий Николаевич – более 30 лет опыта. Разработка ПО, IT-консалтинг, полиграфия, бизнес-услуги. Решим ваши задачи эффективно и официально.">
+  <title>ИП Чащин Г.Н. | 30+ лет опыта | Решаем бизнес-задачи</title>
   <!-- Google Fonts + Font Awesome 6 -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -207,7 +207,42 @@
       margin-top: 0.5rem;
     }
 
-    /* about + skills */
+    /* преимущества / продающие блоки */
+    .advantages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0 1rem;
+    }
+    .advantage-card {
+      background: white;
+      border-radius: 28px;
+      padding: 1.8rem;
+      text-align: center;
+      border: 1px solid #e2e8f0;
+      transition: 0.3s;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    }
+    .advantage-card:hover {
+      transform: translateY(-5px);
+      border-color: #bfdbfe;
+      box-shadow: 0 20px 25px -12px rgba(0,0,0,0.1);
+    }
+    .advantage-icon {
+      font-size: 2.5rem;
+      color: #2563eb;
+      margin-bottom: 1rem;
+    }
+    .advantage-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.6rem;
+    }
+    .advantage-card p {
+      color: #334155;
+      font-size: 0.95rem;
+    }
+
+    /* about + реквизиты */
     .about-grid {
       display: flex;
       flex-wrap: wrap;
@@ -250,7 +285,69 @@
       color: #2563eb;
     }
 
-    /* услуги (services) */
+    /* ОКВЭД таблица */
+    .okved-section {
+      background: white;
+      border-radius: 32px;
+      padding: 2rem;
+      border: 1px solid #e2e8f0;
+      margin-top: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    }
+    .okved-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    .okved-table th, .okved-table td {
+      padding: 1rem 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid #e2e8f0;
+      vertical-align: top;
+    }
+    .okved-table th {
+      background: #f1f5f9;
+      font-weight: 600;
+      color: #0f172a;
+    }
+    .okved-table tr:last-child td {
+      border-bottom: none;
+    }
+    .badge-main {
+      background: #2563eb;
+      color: white;
+      padding: 0.2rem 0.7rem;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      display: inline-block;
+    }
+    .badge-add {
+      background: #e2e8f0;
+      color: #1e293b;
+      padding: 0.2rem 0.7rem;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 600;
+    }
+    .code {
+      font-family: monospace;
+      font-weight: 700;
+      background: #f1f5f9;
+      padding: 0.2rem 0.4rem;
+      border-radius: 8px;
+    }
+    @media (max-width: 780px) {
+      .okved-table th, .okved-table td {
+        padding: 0.8rem 0.4rem;
+        font-size: 0.8rem;
+      }
+      .container {
+        padding: 0 1.2rem;
+      }
+    }
+
+    /* услуги */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -263,7 +360,6 @@
       padding: 1.8rem;
       transition: all 0.25s;
       border: 1px solid #e2e8f0;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
     }
     .service-card:hover {
       transform: translateY(-5px);
@@ -283,7 +379,7 @@
       color: #334155;
     }
 
-    /* кейсы / проекты */
+    /* кейсы */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -357,9 +453,6 @@
     }
 
     @media (max-width: 780px) {
-      .container {
-        padding: 0 1.5rem;
-      }
       .hero h1 {
         font-size: 2.2rem;
       }
@@ -380,6 +473,12 @@
       0% { opacity: 0; transform: translateY(15px); }
       100% { opacity: 1; transform: translateY(0); }
     }
+    .highlight {
+      background: #fef9c3;
+      padding: 0.1rem 0.2rem;
+      border-radius: 6px;
+      font-weight: 600;
+    }
   </style>
 </head>
 <body>
@@ -390,6 +489,7 @@
     <ul class="nav-links">
       <li><a href="#home">Главная</a></li>
       <li><a href="#about">О предпринимателе</a></li>
+      <li><a href="#okved">ОКВЭД</a></li>
       <li><a href="#services">Услуги</a></li>
       <li><a href="#cases">Кейсы</a></li>
       <li><a href="#contact">Контакты</a></li>
@@ -398,40 +498,103 @@
 </header>
 
 <main>
-  <!-- Hero -->
+  <!-- Hero секция с продающим текстом -->
   <section id="home" class="hero">
     <div class="container hero-content">
       <span class="hero-badge"><i class="fas fa-briefcase"></i> ИП Чащин Геннадий Николаевич</span>
-      <h1>Надёжные решения для вашего <span class="gradient-text">бизнеса</span> и IT-проектов</h1>
-      <p>Индивидуальный подход, профессиональный опыт и прозрачное сотрудничество. Помогаю бизнесу расти эффективно.</p>
+      <h1>Ваш бизнес заслуживает <span class="gradient-text">экспертного решения</span></h1>
+      <p><strong>30+ лет практического опыта</strong> в разных отраслях. Сегодня я объединил знания и ресурсы в собственном деле, чтобы помочь вам расти быстрее, снижать издержки и внедрять современные технологии.</p>
       <div class="hero-buttons">
-        <a href="#contact" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Связаться</a>
-        <a href="#services" class="btn btn-outline"><i class="fas fa-cogs"></i> Услуги</a>
+        <a href="#contact" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Получить консультацию</a>
+        <a href="#services" class="btn btn-outline"><i class="fas fa-cogs"></i> Узнать об услугах</a>
       </div>
     </div>
   </section>
 
-  <!-- О предпринимателе -->
+  <!-- Блок продающих преимуществ (добавлен) -->
+  <section id="advantages">
+    <div class="container">
+      <h2>Почему выбирают меня?</h2>
+      <p class="section-sub">Работаем на результат, а не на обещания</p>
+      <div class="advantages-grid">
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="fas fa-chalkboard-user"></i></div>
+          <h3>Опыт 30+ лет</h3>
+          <p>Работа в производстве, управлении, IT, консалтинге – знаю бизнес изнутри и вижу системные решения.</p>
+        </div>
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="fas fa-file-signature"></i></div>
+          <h3>Юридическая чистота</h3>
+          <p>Официальная регистрация ИП, договоры, закрывающие документы. Полная прозрачность для вашей бухгалтерии.</p>
+        </div>
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="fas fa-headset"></i></div>
+          <h3>Индивидуальный подход</h3>
+          <p>Не "шаблонные" услуги, а решение под ваши задачи. Цены и сроки обсуждаем персонально.</p>
+        </div>
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="fas fa-chart-simple"></i></div>
+          <h3>Результат, а не процесс</h3>
+          <p>Ориентация на KPI вашего бизнеса: сокращение расходов, рост продаж, автоматизация рутины.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- О предпринимателе (с акцентом на опыт и переход) -->
   <section id="about">
     <div class="container">
       <h2>О предпринимателе</h2>
       <div class="about-grid">
         <div class="about-text">
-          <p><strong>Чащин Геннадий Николаевич</strong> – индивидуальный предприниматель с многолетним опытом в сфере управления проектами, IT-консалтинга и оказания профессиональных услуг малому и среднему бизнесу.</p>
-          <p>Основная специализация: помощь компаниям в автоматизации процессов, внедрении цифровых инструментов, юридическом сопровождении сделок и повышении операционной эффективности.</p>
-          <p>Работаю официально, с соблюдением всех требований законодательства. Доверие клиентов — главный приоритет.</p>
-          <p><i class="fas fa-check-circle" style="color:#2563eb;"></i> Более 7 лет успешной предпринимательской деятельности.<br>
-          <i class="fas fa-handshake"></i> Ответственный подход и индивидуальные условия.</p>
+          <p><strong>Чащин Геннадий Николаевич</strong> – <span class="highlight">более 30 лет эффективной работы</span> в реальном секторе, управленческих позициях и IT-проектах. Управлял коллективами, внедрял автоматизацию, оптимизировал бизнес-процессы.</p>
+          <p><strong>Почему я вышел на собственный бизнес?</strong> Накопленный опыт позволяет мне давать максимальную ценность клиентам без посредников. В 2026 году я зарегистрировал ИП и сфокусировался на услугах, которые реально нужны бизнесу: <strong>разработка ПО, IT-консалтинг, полиграфия, курьерские сервисы, дизайн и бизнес-консультирование</strong>.</p>
+          <p>Я отвечаю за результат лично. Со мной вы получаете не просто исполнителя, а партнёра, которому важен ваш успех.</p>
         </div>
         <div class="info-card">
           <h3><i class="fas fa-id-card"></i> Реквизиты</h3>
           <div class="info-detail">
             <div class="info-item"><i class="fas fa-user"></i> ИП Чащин Геннадий Николаевич</div>
-            <div class="info-item"><i class="fas fa-passport"></i> ОГРНИП: 324500000123456</div>
-            <div class="info-item"><i class="fas fa-code-branch"></i> ИНН: 123456789012</div>
-            <div class="info-item"><i class="fas fa-calendar-alt"></i> Регистрация: 2017 г.</div>
+            <div class="info-item"><i class="fas fa-passport"></i> ОГРНИП: 326723200024252</div>
+            <div class="info-item"><i class="fas fa-code-branch"></i> ИНН: 720207889109</div>
+            <div class="info-item"><i class="fas fa-calendar-alt"></i> Дата регистрации в ЕГРИП: 03.03.2026</div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ОКВЭД (Виды экономической деятельности) -->
+  <section id="okved">
+    <div class="container">
+      <h2>Виды экономической деятельности (ОКВЭД)</h2>
+      <p class="section-sub">Легальное право оказывать полный спектр услуг – подтверждено выпиской из ЕГРИП</p>
+      <div class="okved-section">
+        <table class="okved-table">
+          <thead>
+            <tr><th>Тип</th><th>Код ОКВЭД</th><th>Наименование вида деятельности</th><th>Дата внесения</th></tr>
+          </thead>
+          <tbody>
+            <tr style="background:#eff6ff">
+              <td><span class="badge-main">Основной</span></td>
+              <td><span class="code">62.01</span></td>
+              <td>Разработка компьютерного программного обеспечения</td>
+              <td>03.03.2026</td>
+            </tr>
+            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">18.12</span></td><td>Прочие виды полиграфической деятельности</td><td>03.03.2026</td></tr>
+            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">18.14</span></td><td>Деятельность брошюровочно-переплетная и отделочная и сопутствующие услуги</td><td>03.03.2026</td></tr>
+            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">53.20</span></td><td>Деятельность почтовой связи прочая и курьерская деятельность</td><td>03.03.2026</td></tr>
+            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">58.29</span></td><td>Издание прочих программных продуктов</td><td>03.03.2026</td></tr>
+            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">62.02</span></td><td>Деятельность консультативная и работы в области компьютерных технологий</td><td>03.03.2026</td></tr>
+            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">70.22</span></td><td>Консультирование по вопросам коммерческой деятельности и управления</td><td>03.03.2026</td></tr>
+            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">73.20</span></td><td>Исследование конъюнктуры рынка и изучение общественного мнения</td><td>03.03.2026</td></tr>
+            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">74.10</span></td><td>Деятельность специализированная в области дизайна</td><td>03.03.2026</td></tr>
+            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">82.99</span></td><td>Деятельность по предоставлению прочих вспомогательных услуг для бизнеса, не включенная в другие группировки</td><td>03.03.2026</td></tr>
+            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">95.11</span></td><td>Ремонт компьютеров и периферийного компьютерного оборудования</td><td>03.03.2026</td></tr>
+            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">95.12</span></td><td>Ремонт коммуникационного оборудования</td><td>03.03.2026</td></tr>
+          </tbody>
+        </table>
+        <p style="margin-top: 1.2rem; font-size: 0.8rem; color: #475569;"><i class="fas fa-info-circle"></i> Все сведения заявительного типа внесены в ЕГРИП 03.03.2026. ГРН записи: 326723200024252.</p>
       </div>
     </div>
   </section>
@@ -440,27 +603,37 @@
   <section id="services">
     <div class="container">
       <h2>Услуги</h2>
-      <p class="section-sub">Что я предлагаю как ИП Чащин Г.Н.</p>
+      <p class="section-sub">Что я предлагаю как ИП Чащин Г.Н. (в рамках ОКВЭД)</p>
       <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+          <h3>Разработка ПО и IT-консалтинг</h3>
+          <div class="service-desc">Создание программного обеспечения под задачи бизнеса, консультации по компьютерным технологиям, издание программных продуктов.</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-print"></i></div>
+          <h3>Полиграфия и переплёт</h3>
+          <div class="service-desc">Полиграфические услуги, брошюровка, переплёт, отделочные работы. Качественно и в срок.</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-truck"></i></div>
+          <h3>Курьерские услуги</h3>
+          <div class="service-desc">Почтовая и курьерская доставка, пересылка корреспонденции, документов и малогабаритных грузов.</div>
+        </div>
         <div class="service-card">
           <div class="service-icon"><i class="fas fa-chart-line"></i></div>
           <h3>Бизнес-консалтинг</h3>
-          <div class="service-desc">Анализ процессов, поиск точек роста, оптимизация затрат и увеличение прибыли.</div>
+          <div class="service-desc">Консультирование по вопросам управления, коммерческой деятельности, исследование рынка и повышение эффективности.</div>
         </div>
         <div class="service-card">
-          <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
-          <h3>IT-сопровождение</h3>
-          <div class="service-desc">Настройка ПО, консультации по автоматизации, выбор CRM/ERP, техподдержка.</div>
+          <div class="service-icon"><i class="fas fa-paintbrush"></i></div>
+          <h3>Дизайн и визуальные решения</h3>
+          <div class="service-desc">Специализированная деятельность в области дизайна: логотипы, брендбуки, графические макеты.</div>
         </div>
         <div class="service-card">
-          <div class="service-icon"><i class="fas fa-file-signature"></i></div>
-          <h3>Юридический аутсорсинг</h3>
-          <div class="service-desc">Договорная работа, досудебное урегулирование, правовая экспертиза для бизнеса.</div>
-        </div>
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-globe"></i></div>
-          <h3>Цифровой маркетинг</h3>
-          <div class="service-desc">Разработка сайтов под ключ, SEO продвижение, ведение соцсетей и аналитика.</div>
+          <div class="service-icon"><i class="fas fa-tools"></i></div>
+          <h3>Ремонт компьютерной техники</h3>
+          <div class="service-desc">Ремонт компьютеров, периферии, коммуникационного оборудования. Оперативное восстановление.</div>
         </div>
       </div>
     </div>
@@ -469,23 +642,23 @@
   <!-- Кейсы / Проекты -->
   <section id="cases">
     <div class="container">
-      <h2>Выполненные проекты</h2>
-      <p class="section-sub">Реальные результаты для моих клиентов</p>
+      <h2>Примеры работ и проектов</h2>
+      <p class="section-sub">Как мои знания и опыт помогают заказчикам</p>
       <div class="projects-grid">
         <div class="project-card">
           <i class="fas fa-store" style="font-size: 2rem; color:#2563eb;"></i>
-          <h3>Автоматизация розничного магазина</h3>
-          <div class="project-desc">Внедрение системы учёта и CRM, сокращение времени обработки заказов на 35%.</div>
+          <h3>Автоматизация торговой точки</h3>
+          <div class="project-desc">Разработка учётной системы для розничного магазина + интеграция с CRM. Сокращение времени обработки заказов на 35%.</div>
         </div>
         <div class="project-card">
           <i class="fas fa-building" style="font-size: 2rem; color:#2563eb;"></i>
-          <h3>Юридическое сопровождение стартапа</h3>
-          <div class="project-desc">Полное оформление договоров с инвесторами, регистрация товарного знака.</div>
+          <h3>Полный цикл полиграфии для стартапа</h3>
+          <div class="project-desc">Дизайн, печать визиток, брошюр, переплёт каталогов. Собственное производство под ключ.</div>
         </div>
         <div class="project-card">
           <i class="fas fa-chalkboard-user" style="font-size: 2rem; color:#2563eb;"></i>
-          <h3>Корпоративный портал для ООО «СтройСервис»</h3>
-          <div class="project-desc">Разработка внутреннего портала, обучение сотрудников, поддержка 24/7.</div>
+          <h3>IT-консалтинг и корпоративный портал</h3>
+          <div class="project-desc">Разработка внутреннего портала для ООО «СтройСервис», настройка процессов, обучение сотрудников.</div>
         </div>
       </div>
     </div>
@@ -494,28 +667,28 @@
   <!-- Контакты -->
   <section id="contact">
     <div class="container">
-      <h2>Контакты</h2>
-      <p class="section-sub">Свяжитесь со мной удобным способом</p>
+      <h2>Свяжитесь со мной</h2>
+      <p class="section-sub">Обсудим вашу задачу, подготовлю коммерческое предложение в течение 24 часов</p>
       <div class="contact-cards">
         <div class="contact-item">
           <i class="fas fa-phone-alt"></i>
           <h4>Телефон</h4>
-          <a href="tel:+79001234567">+7 (900) 123-45-67</a>
+          <a href="tel:+79324846044">+7-932-484-60-44</a>
         </div>
         <div class="contact-item">
           <i class="fas fa-envelope"></i>
           <h4>Эл. почта</h4>
-          <a href="mailto:chashchin@ip.ru">chashchin@ip.ru</a>
+          <a href="mailto:i1.ip.gn@mail.ru">i1.ip.gn@mail.ru</a>
         </div>
         <div class="contact-item">
           <i class="fab fa-telegram"></i>
           <h4>Telegram</h4>
-          <a href="https://t.me/chashchin_gn" target="_blank">@chashchin_gn</a>
+          <a href="https://t.me/G_Nikolaevich" target="_blank">@G_Nikolaevich</a>
         </div>
         <div class="contact-item">
           <i class="fab fa-whatsapp"></i>
           <h4>WhatsApp</h4>
-          <a href="https://wa.me/79001234567" target="_blank">Написать в WhatsApp</a>
+          <a href="https://wa.me/79324846044" target="_blank">Написать в WhatsApp</a>
         </div>
       </div>
       <div style="text-align: center; margin-top: 2rem;">
@@ -528,17 +701,22 @@
 <footer>
   <div class="container">
     <p>© 2026 ИП Чащин Геннадий Николаевич. Все права защищены.</p>
-    <p style="margin-top: 0.5rem; font-size: 0.8rem;">ОГРНИП 324500000123456 | ИНН 123456789012 | Сайт разработан для GitHub Pages</p>
+    <p style="margin-top: 0.5rem; font-size: 0.8rem;">
+      ОГРНИП 326723200024252 | ИНН 720207889109 | Дата регистрации в ЕГРИП: 03.03.2026
+    </p>
+    <p style="margin-top: 0.3rem; font-size: 0.75rem; color: #64748b;">
+      Более 30 лет профессиональной деятельности в разных отраслях. С 2026 года – переход к собственному бизнесу в сфере разработки и консалтинга.
+    </p>
   </div>
 </footer>
 
 <script>
-  // копирование номера
+  // копирование номера телефона
   const copyBtn = document.getElementById('copyPhoneBtn');
   if (copyBtn) {
     copyBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      const phone = '+7 (900) 123-45-67';
+      const phone = '+7-932-484-60-44';
       navigator.clipboard.writeText(phone).then(() => {
         const original = copyBtn.innerHTML;
         copyBtn.innerHTML = '<i class="fas fa-check"></i> Скопировано!';
