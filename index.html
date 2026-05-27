@@ -21,7 +21,6 @@
       color: #0f172a;
       line-height: 1.5;
       scroll-behavior: smooth;
-      padding-bottom: 70px; /* чтобы контент не перекрывался нижней панелью */
     }
 
     ::-webkit-scrollbar {
@@ -127,19 +126,48 @@
       color: #2563eb;
     }
 
-    /* информационная строка о печати (наверху) */
-    .info-stamp {
+    /* СТИЛЬ ДЛЯ ВЕРХНИХ ИНФОРМАЦИОННЫХ ПОЛОС (печать + контакты) */
+    .info-strip {
       background: linear-gradient(90deg, #eef2ff, #e0e7ff);
       border-bottom: 1px solid #cbd5e1;
-      padding: 0.5rem 0;
+      padding: 0.6rem 0;
       font-size: 0.85rem;
       text-align: center;
       color: #1e40af;
       font-weight: 500;
+      width: 100%;
     }
-    .info-stamp i {
+    .info-strip i {
       margin-right: 0.5rem;
       color: #2563eb;
+    }
+    .contact-strip {
+      background: linear-gradient(90deg, #f1f5f9, #e6edf7);
+      border-bottom: 1px solid #cbd5e1;
+      padding: 0.6rem 0;
+      font-size: 0.85rem;
+      text-align: center;
+      color: #0f172a;
+      font-weight: 500;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.8rem;
+    }
+    .contact-strip a {
+      color: #1e293b;
+      text-decoration: none;
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .contact-strip a:hover {
+      color: #2563eb;
+      transform: translateY(-1px);
+    }
+    .contact-strip i {
+      font-size: 0.95rem;
     }
 
     /* buttons */
@@ -183,7 +211,7 @@
     /* полупрозрачная кнопка "на главную" */
     .back-to-home {
       position: fixed;
-      bottom: 5rem;
+      bottom: 2rem;
       right: 1.5rem;
       background: rgba(37, 99, 235, 0.65);
       backdrop-filter: blur(8px);
@@ -205,55 +233,6 @@
     .back-to-home:hover {
       background: rgba(37, 99, 235, 0.95);
       transform: scale(1.05);
-    }
-
-    /* НИЖНЯЯ ПОЛУПРОЗРАЧНАЯ ПАНЕЛЬ С КОНТАКТАМИ (фиксированная) */
-    .bottom-contact-bar {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: rgba(15, 23, 42, 0.85);
-      backdrop-filter: blur(12px);
-      border-top: 1px solid rgba(255,255,255,0.2);
-      padding: 0.75rem 1rem;
-      z-index: 98;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-      font-size: 0.9rem;
-      box-shadow: 0 -4px 12px rgba(0,0,0,0.1);
-    }
-    .bottom-contact-bar a {
-      color: #e2e8f0;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: 0.2s;
-      font-weight: 500;
-    }
-    .bottom-contact-bar a:hover {
-      color: #94a3f8;
-      transform: translateY(-2px);
-    }
-    .bottom-contact-bar i {
-      font-size: 1.1rem;
-    }
-    @media (max-width: 680px) {
-      .bottom-contact-bar {
-        gap: 1rem;
-        font-size: 0.75rem;
-        padding: 0.6rem 0.8rem;
-      }
-      .back-to-home {
-        bottom: 5rem;
-        right: 1rem;
-        width: 42px;
-        height: 42px;
-        font-size: 1.2rem;
-      }
     }
 
     /* hero */
@@ -485,7 +464,7 @@
       box-shadow: 0 12px 20px -12px rgba(0,0,0,0.1);
     }
 
-    /* контакты (секция с карточками, оставляем для детального отображения) */
+    /* контакты (основная секция с карточками) */
     .contact-cards {
       display: flex;
       flex-wrap: wrap;
@@ -536,6 +515,18 @@
       section {
         padding: 3rem 0;
       }
+      .contact-strip {
+        gap: 1rem;
+        font-size: 0.75rem;
+        padding: 0.5rem;
+      }
+      .back-to-home {
+        bottom: 1.5rem;
+        right: 1rem;
+        width: 42px;
+        height: 42px;
+        font-size: 1.2rem;
+      }
     }
     @media (max-width: 480px) {
       .hero-buttons .btn {
@@ -556,11 +547,7 @@
 <!-- Полупрозрачная кнопка возврата на главную -->
 <a href="#home" class="back-to-home" title="На главную"><i class="fas fa-arrow-up"></i></a>
 
-<!-- Верхняя строка: печать действительна -->
-<div class="info-stamp">
-  <i class="fas fa-stamp"></i> Печать ИП — действительна! <i class="fas fa-check-circle"></i> Все документы оформлены официально, регистрация в ЕГРИП подтверждена.
-</div>
-
+<!-- ШАПКА (меню) -->
 <header class="header">
   <div class="container nav-bar">
     <div class="logo">ИП <span>Чащин Г.Н.</span></div>
@@ -574,6 +561,19 @@
     </ul>
   </div>
 </header>
+
+<!-- ПОЛОСА 1: ПЕЧАТЬ ДЕЙСТВИТЕЛЬНА (под меню) -->
+<div class="info-strip">
+  <i class="fas fa-stamp"></i> Печать ИП — действительна! <i class="fas fa-check-circle"></i> Все документы оформлены официально, регистрация в ЕГРИП подтверждена.
+</div>
+
+<!-- ПОЛОСА 2: КОНТАКТЫ (в том же стиле) -->
+<div class="contact-strip">
+  <a href="tel:+79324846044"><i class="fas fa-phone-alt"></i> +7-932-484-60-44</a>
+  <a href="mailto:i1.ip.gn@mail.ru"><i class="fas fa-envelope"></i> i1.ip.gn@mail.ru</a>
+  <a href="https://t.me/G_Nikolaevich" target="_blank"><i class="fab fa-telegram"></i> @G_Nikolaevich</a>
+  <a href="https://wa.me/79324846044" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+</div>
 
 <main>
   <!-- Hero секция – акцент на бизнес-консалтинг -->
@@ -658,73 +658,18 @@
               <td><span class="code">62.01</span></td>
               <td>Разработка компьютерного программного обеспечения</td>
               <td>03.03.2026</td>
-             </tr>
-             <tr>
-               <td><span class="badge-add">Доп.</span></td>
-               <td><span class="code">70.22</span></td>
-               <td>Консультирование по вопросам коммерческой деятельности и управления</td>
-               <td>03.03.2026</td>
-             </tr>
-             <tr>
-               <td><span class="badge-add">Доп.</span></td>
-               <td><span class="code">73.20</span></td>
-               <td>Исследование конъюнктуры рынка и изучение общественного мнения</td>
-               <td>03.03.2026</td>
-             </tr>
-             <tr>
-               <td><span class="badge-add">Доп.</span></td>
-               <td><span class="code">82.99</span></td>
-               <td>Деятельность по предоставлению прочих вспомогательных услуг для бизнеса</td>
-               <td>03.03.2026</td>
-             </tr>
-             <tr>
-               <td><span class="badge-add">Доп.</span></td>
-               <td><span class="code">62.02</span></td>
-               <td>Деятельность консультативная и работы в области компьютерных технологий</td>
-               <td>03.03.2026</td>
-             </tr>
-             <tr>
-               <td><span class="badge-add">Доп.</span></td>
-               <td><span class="code">18.12</span></td>
-               <td>Прочие виды полиграфической деятельности</td>
-               <td>03.03.2026</td>
-             </tr>
-             <tr>
-               <td><span class="badge-add">Доп.</span></td>
-               <td><span class="code">18.14</span></td>
-               <td>Деятельность брошюровочно-переплетная и отделочная</td>
-               <td>03.03.2026</td>
-             </tr>
-             <tr>
-               <td><span class="badge-add">Доп.</span></td>
-               <td><span class="code">53.20</span></td>
-               <td>Деятельность почтовой связи прочая и курьерская деятельность</td>
-               <td>03.03.2026</td>
-             </tr>
-             <tr>
-               <td><span class="badge-add">Доп.</span></td>
-               <td><span class="code">58.29</span></td>
-               <td>Издание прочих программных продуктов</td>
-               <td>03.03.2026</td>
-             </tr>
-             <tr>
-               <td><span class="badge-add">Доп.</span></td>
-               <td><span class="code">74.10</span></td>
-               <td>Деятельность специализированная в области дизайна</td>
-               <td>03.03.2026</td>
-             </tr>
-             <tr>
-               <td><span class="badge-add">Доп.</span></td>
-               <td><span class="code">95.11</span></td>
-               <td>Ремонт компьютеров и периферийного оборудования</td>
-               <td>03.03.2026</td>
-             </tr>
-             <tr>
-               <td><span class="badge-add">Доп.</span></td>
-               <td><span class="code">95.12</span></td>
-               <td>Ремонт коммуникационного оборудования</td>
-               <td>03.03.2026</td>
-             </tr>
+            </tr>
+            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">70.22</span></td><td>Консультирование по вопросам коммерческой деятельности и управления</td><td>03.03.2026</td></tr>
+            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">73.20</span></td><td>Исследование конъюнктуры рынка и изучение общественного мнения</td><td>03.03.2026</td></tr>
+            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">82.99</span></td><td>Деятельность по предоставлению прочих вспомогательных услуг для бизнеса</td><td>03.03.2026</td></tr>
+            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">62.02</span></td><td>Деятельность консультативная и работы в области компьютерных технологий</td><td>03.03.2026</td></tr>
+            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">18.12</span></td><td>Прочие виды полиграфической деятельности</td><td>03.03.2026</td></tr>
+            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">18.14</span></td><td>Деятельность брошюровочно-переплетная и отделочная</td><td>03.03.2026</td></tr>
+            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">53.20</span></td><td>Деятельность почтовой связи прочая и курьерская деятельность</td><td>03.03.2026</td></tr>
+            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">58.29</span></td><td>Издание прочих программных продуктов</td><td>03.03.2026</td></tr>
+            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">74.10</span></td><td>Деятельность специализированная в области дизайна</td><td>03.03.2026</td></tr>
+            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">95.11</span></td><td>Ремонт компьютеров и периферийного оборудования</td><td>03.03.2026</td></tr>
+            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">95.12</span></td><td>Ремонт коммуникационного оборудования</td><td>03.03.2026</td></tr>
           </tbody>
         </table>
         <p style="margin-top: 1.2rem; font-size: 0.8rem; color: #475569;"><i class="fas fa-info-circle"></i> Все сведения внесены в ЕГРИП 03.03.2026. ГРН записи: 326723200024252. Печать ИП действительна.</p>
@@ -827,14 +772,6 @@
     </p>
   </div>
 </footer>
-
-<!-- НИЖНЯЯ ПОЛУПРОЗРАЧНАЯ ПАНЕЛЬ С КОНТАКТАМИ (видна на всех страницах) -->
-<div class="bottom-contact-bar">
-  <a href="tel:+79324846044"><i class="fas fa-phone-alt"></i> +7-932-484-60-44</a>
-  <a href="mailto:i1.ip.gn@mail.ru"><i class="fas fa-envelope"></i> i1.ip.gn@mail.ru</a>
-  <a href="https://t.me/G_Nikolaevich" target="_blank"><i class="fab fa-telegram"></i> @G_Nikolaevich</a>
-  <a href="https://wa.me/79324846044" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-</div>
 
 <script>
   // копирование номера телефона из основной секции контактов
