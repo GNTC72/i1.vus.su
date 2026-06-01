@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="ИП Чащин Геннадий Николаевич – полный цикл: от проектирования и разработки до производства. 30+ лет опыта. Консалтинг, автоматизация, стратегия.">
+  <meta name="description" content="ИП Чащин Геннадий Николаевич – консалтинг по бизнес-процессам и развитию компаний. Оптимизация, стратегия, автоматизация. 30+ лет опыта.">
 
-  <!-- Security headers (CSP, X-Frame, etc) -->
+  <!-- === ЗАГОЛОВКИ БЕЗОПАСНОСТИ === -->
   <meta http-equiv="X-Frame-Options" content="DENY">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="Content-Security-Policy" content="
@@ -19,8 +19,8 @@
   ">
   <meta name="referrer" content="strict-origin-when-cross-origin">
 
-  <title>ИП Чащин Г.Н. | От проектирования до производства</title>
-  <!-- Google Fonts + Font Awesome -->
+  <title>ИП Чащин Г.Н. | Консалтинг бизнес-процессов и развитие компаний</title>
+  <!-- Google Fonts + Font Awesome 6 -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
@@ -112,12 +112,17 @@
       font-weight: 800;
       color: #0f172a;
       letter-spacing: -0.02em;
+      text-decoration: none;
+      transition: opacity 0.2s;
     }
     .logo span {
       background: linear-gradient(135deg, #1e3a8a, #3b82f6);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
+    }
+    .logo:hover {
+      opacity: 0.8;
     }
 
     .nav-links {
@@ -134,7 +139,7 @@
     }
     .nav-links a:hover { color: #2563eb; }
 
-    /* info strip (печать) */
+    /* верхняя полоса "печать действительна" */
     .info-strip {
       position: fixed;
       top: 64px;
@@ -151,7 +156,7 @@
     }
     .info-strip i { margin-right: 0.5rem; color: #2563eb; }
 
-    /* bottom contact bar */
+    /* нижняя панель контактов */
     .bottom-contact-bar {
       position: fixed;
       bottom: 0;
@@ -215,7 +220,7 @@
       background: rgba(59, 130, 246, 0.05);
     }
 
-    /* back to home button */
+    /* кнопка наверх */
     .back-to-home {
       position: fixed;
       bottom: 5rem;
@@ -285,7 +290,7 @@
       margin-top: 0.5rem;
     }
 
-    /* advantages grid */
+    /* преимущества */
     .advantages-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -311,14 +316,11 @@
       margin-bottom: 1rem;
     }
     .advantage-card h3 {
-      font-size: 1.4rem;
-      margin-bottom: 0.75rem;
-    }
-    .advantage-card p {
-      color: #334155;
+      font-size: 1.3rem;
+      margin-bottom: 0.6rem;
     }
 
-    /* about + details */
+    /* about */
     .about-grid {
       display: flex;
       flex-wrap: wrap;
@@ -341,27 +343,17 @@
       box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
       border: 1px solid #e2e8f0;
     }
-    .info-card h3 {
-      margin-bottom: 1rem;
-      font-size: 1.3rem;
-    }
-    .info-detail {
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-    }
+    .info-card h3 { margin-bottom: 1rem; font-size: 1.3rem; }
+    .info-detail { display: flex; flex-direction: column; gap: 0.8rem; }
     .info-item {
       display: flex;
       align-items: center;
       gap: 0.8rem;
       color: #0f172a;
     }
-    .info-item i {
-      width: 28px;
-      color: #2563eb;
-    }
+    .info-item i { width: 28px; color: #2563eb; }
 
-    /* okved table */
+    /* ОКВЭД таблица */
     .okved-section {
       background: white;
       border-radius: 32px;
@@ -381,10 +373,7 @@
       text-align: left;
       border-bottom: 1px solid #e2e8f0;
     }
-    .okved-table th {
-      background: #f1f5f9;
-      font-weight: 600;
-    }
+    .okved-table th { background: #f1f5f9; font-weight: 600; }
     .badge-main, .badge-add {
       padding: 0.2rem 0.7rem;
       border-radius: 20px;
@@ -402,32 +391,28 @@
       border-radius: 8px;
     }
 
-    /* projects / cases */
-    .projects-grid {
+    /* услуги и кейсы */
+    .services-grid, .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 2rem;
     }
-    .project-card {
+    .service-card, .project-card {
       background: white;
       border-radius: 24px;
       padding: 1.5rem;
       border: 1px solid #e2e8f0;
       transition: 0.2s;
     }
-    .project-card:hover {
+    .service-card:hover, .project-card:hover {
       border-color: #3b82f6;
       transform: translateY(-5px);
       box-shadow: 0 20px 25px -12px rgba(0,0,0,0.1);
     }
-    .project-card i {
-      font-size: 2rem;
-      color: #2563eb;
-      margin-bottom: 0.8rem;
-      display: inline-block;
-    }
+    .service-icon { font-size: 2.2rem; color: #2563eb; margin-bottom: 1rem; }
+    .service-card h3 { font-size: 1.4rem; margin-bottom: 0.75rem; }
 
-    /* contact main section */
+    /* контакты основная секция */
     .contact-cards {
       display: flex;
       flex-wrap: wrap;
@@ -444,13 +429,8 @@
       min-width: 200px;
       border: 1px solid #e2e8f0;
     }
-    .contact-item i {
-      font-size: 2rem;
-      color: #2563eb;
-      margin-bottom: 0.6rem;
-    }
+    .contact-item i { font-size: 2rem; color: #2563eb; margin-bottom: 0.6rem; }
 
-    /* footer + legal */
     footer {
       border-top: 1px solid #e2e8f0;
       padding: 2rem 0 1.5rem;
@@ -491,85 +471,74 @@
 </head>
 <body>
 
+<!-- Кнопка наверх -->
 <a href="#home" class="back-to-home" title="На главную"><i class="fas fa-arrow-up"></i></a>
 
+<!-- Шапка (sticky) -->
 <header class="header">
   <div class="container nav-bar">
-    <div class="logo">ИП <span>Чащин Г.Н.</span></div>
+    <a href="#home" class="logo">ИП <span>Чащин Г.Н.</span></a>
     <ul class="nav-links">
       <li><a href="#home">Главная</a></li>
       <li><a href="#about">О предпринимателе</a></li>
       <li><a href="#okved">ОКВЭД</a></li>
-      <li><a href="#cases">Проекты</a></li>
+      <li><a href="#services">Услуги</a></li>
+      <li><a href="#cases">Кейсы</a></li>
       <li><a href="#contact">Контакты</a></li>
     </ul>
   </div>
 </header>
 
+<!-- Верхняя полоса: печать действительна -->
 <div class="info-strip">
-  <i class="fas fa-stamp"></i> Печать ИП — действительна! <i class="fas fa-check-circle"></i> Регистрация в ЕГРИП подтверждена, все документы официальны.
+  <i class="fas fa-stamp"></i> Печать ИП — действительна! <i class="fas fa-check-circle"></i> Все документы оформлены официально, регистрация в ЕГРИП подтверждена.
 </div>
 
+<!-- Нижняя фиксированная панель контактов (email обновлён) -->
 <div class="bottom-contact-bar">
   <a href="tel:+79324846044"><i class="fas fa-phone-alt"></i> +7-932-484-60-44</a>
-  <a href="mailto:i1.ip.gn@mail.ru"><i class="fas fa-envelope"></i> i1.ip.gn@mail.ru</a>
+  <a href="mailto:i1.vus.su@mail.ru"><i class="fas fa-envelope"></i> i1.vus.su@mail.ru</a>
   <a href="https://t.me/G_Nikolaevich" target="_blank" rel="noopener noreferrer"><i class="fab fa-telegram"></i> @G_Nikolaevich</a>
   <a href="https://wa.me/79324846044" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> WhatsApp</a>
 </div>
 
 <main>
-  <!-- Hero: акцент на полный цикл + консалтинг -->
+  <!-- Hero -->
   <section id="home" class="hero">
     <div class="container hero-content">
       <span class="hero-badge"><i class="fas fa-briefcase"></i> ИП Чащин Геннадий Николаевич</span>
-      <h1>От <span class="gradient-text">проектирования и разработки</span> до производства</h1>
-      <p><strong>30+ лет управленческого опыта.</strong> Помогаю бизнесу создавать и внедрять эффективные решения: от идеи до готового продукта. Консалтинг, автоматизация, стратегия — под ключ.</p>
+      <h1>Консалтинг по бизнес-процессам и <span class="gradient-text">развитию компаний</span></h1>
+      <p><strong>30+ лет опыта</strong> в управлении и оптимизации. Помогаю выстроить эффективные процессы, увеличить прибыль и масштабировать бизнес. Разработка ПО – как инструмент для решения ваших задач.</p>
       <div class="hero-buttons">
-        <a href="#contact" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Получить консультацию</a>
-        <a href="#about" class="btn btn-outline"><i class="fas fa-chart-line"></i> Узнать больше</a>
+        <a href="#contact" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Бесплатная консультация</a>
+        <a href="#services" class="btn btn-outline"><i class="fas fa-chart-line"></i> Услуги консалтинга</a>
       </div>
     </div>
   </section>
 
-  <!-- Блок преимуществ: доверие, безопасность, системность -->
+  <!-- Преимущества -->
   <section id="advantages">
     <div class="container">
-      <h2>Работаем на ваш результат</h2>
-      <p class="section-sub">Вы получаете не просто рекомендации, а готовую дорожную карту и поддержку на всех этапах</p>
+      <h2>Почему бизнес доверяет мне?</h2>
+      <p class="section-sub">Системный подход, многолетний опыт и реальные результаты</p>
       <div class="advantages-grid">
-        <div class="advantage-card">
-          <div class="advantage-icon"><i class="fas fa-project-diagram"></i></div>
-          <h3>Полный цикл</h3>
-          <p>От анализа и проектирования до реализации, тестирования и передачи в производство. Один ответственный — без разрывов коммуникации.</p>
-        </div>
-        <div class="advantage-card">
-          <div class="advantage-icon"><i class="fas fa-shield-alt"></i></div>
-          <h3>Юридическая безопасность</h3>
-          <p>Официальный договор, акты, закрывающие документы. Печать ИП действительна — вы работаете с легальным партнёром.</p>
-        </div>
-        <div class="advantage-card">
-          <div class="advantage-icon"><i class="fas fa-brain"></i></div>
-          <h3>Системное мышление</h3>
-          <p>Опыт в управлении и производстве позволяет видеть бизнес целиком, а не отдельные задачи. Решения, которые работают годами.</p>
-        </div>
-        <div class="advantage-card">
-          <div class="advantage-icon"><i class="fas fa-hand-holding-usd"></i></div>
-          <h3>Фокус на прибыль</h3>
-          <p>Каждое предложение оценивается через KPI: снижение издержек, рост выручки, сокращение рутины. Никакой «работы ради работы».</p>
-        </div>
+        <div class="advantage-card"><div class="advantage-icon"><i class="fas fa-chalkboard-user"></i></div><h3>30+ лет в управлении</h3><p>Руководил подразделениями, внедрял изменения, знаю, как повысить эффективность.</p></div>
+        <div class="advantage-card"><div class="advantage-icon"><i class="fas fa-file-signature"></i></div><h3>Юридическая чистота</h3><p>Официальная регистрация ИП, договоры, акты. Печать действительна.</p></div>
+        <div class="advantage-card"><div class="advantage-icon"><i class="fas fa-chart-simple"></i></div><h3>Ориентация на прибыль</h3><p>Не просто рекомендации, а KPI: снижение издержек, рост выручки.</p></div>
+        <div class="advantage-card"><div class="advantage-icon"><i class="fas fa-handshake"></i></div><h3>Индивидуальный подход</h3><p>Решения под ваши задачи, а не шаблоны.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- О предпринимателе: экспертиза + переход к собственному делу -->
+  <!-- О предпринимателе -->
   <section id="about">
     <div class="container">
       <h2>О предпринимателе</h2>
       <div class="about-grid">
         <div class="about-text">
-          <p><strong>Чащин Геннадий Николаевич</strong> — более 30 лет успешной работы на руководящих позициях в разных отраслях: от производственных предприятий до IT и услуг. За это время реализовал десятки проектов по оптимизации, автоматизации и масштабированию бизнеса.</p>
-          <p><strong>Сегодня — собственное дело.</strong> В 2026 году зарегистрировал ИП, чтобы сфокусироваться на главном: помогать компаниям проходить путь <strong>«от проектирования и разработки до производства»</strong> без потери качества и времени. Моя экспертиза — это мост между бизнес-задачей и готовым продуктом.</p>
-          <p>Работаю официально, заключаю договоры, несу ответственность за результат. Ваши риски — мои риски, поэтому каждая задача решается системно и с ориентацией на долгосрочную выгоду.</p>
+          <p><strong>Чащин Геннадий Николаевич</strong> – специалист в области <span class="highlight">консалтинга бизнес-процессов и развития компаний</span>. За плечами <strong>более 30 лет работы</strong> на руководящих позициях.</p>
+          <p><strong>Моя основная экспертиза:</strong> анализ и оптимизация бизнес-процессов, стратегическое планирование, внедрение систем управления, помощь в масштабировании. Разработка ПО – вспомогательный инструмент для автоматизации.</p>
+          <p>Работаю официально (ИП, печать действительна), заключаю договоры, предоставляю акты. В 2026 году зарегистрировал собственное дело, чтобы помогать компаниям расти системно.</p>
         </div>
         <div class="info-card">
           <h3><i class="fas fa-id-card"></i> Реквизиты</h3>
@@ -584,27 +553,27 @@
     </div>
   </section>
 
-  <!-- ОКВЭД (юридическая база) -->
+  <!-- ОКВЭД -->
   <section id="okved">
     <div class="container">
       <h2>Виды экономической деятельности (ОКВЭД)</h2>
-      <p class="section-sub">Право на полный цикл работ — от консалтинга до производства — подтверждено выпиской из ЕГРИП.</p>
+      <p class="section-sub">Легальное право оказывать полный спектр консалтинговых услуг – подтверждено выпиской из ЕГРИП.</p>
       <div class="okved-section">
         <table class="okved-table">
           <thead><tr><th>Тип</th><th>Код</th><th>Наименование</th><th>Дата</th></tr></thead>
           <tbody>
-            <tr style="background:#eff6ff"><td><span class="badge-main">Основной</span></td><td><span class="code">62.01</span></td><td>Разработка компьютерного программного обеспечения</td><td>03.03.2026</td></tr>
-            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">70.22</span></td><td>Консультирование по вопросам коммерческой деятельности и управления</td><td>03.03.2026</td></tr>
-            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">73.20</span></td><td>Исследование конъюнктуры рынка и изучение общественного мнения</td><td>03.03.2026</td></tr>
-            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">82.99</span></td><td>Деятельность по предоставлению прочих вспомогательных услуг для бизнеса</td><td>03.03.2026</td></tr>
-            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">62.02</span></td><td>Деятельность консультативная и работы в области компьютерных технологий</td><td>03.03.2026</td></tr>
-            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">18.12</span></td><td>Прочие виды полиграфической деятельности</td><td>03.03.2026</td></tr>
-            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">18.14</span></td><td>Деятельность брошюровочно-переплетная и отделочная</td><td>03.03.2026</td></tr>
-            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">53.20</span></td><td>Деятельность почтовой связи прочая и курьерская деятельность</td><td>03.03.2026</td></tr>
-            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">58.29</span></td><td>Издание прочих программных продуктов</td><td>03.03.2026</td></tr>
-            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">74.10</span></td><td>Деятельность специализированная в области дизайна</td><td>03.03.2026</td></tr>
-            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">95.11</span></td><td>Ремонт компьютеров и периферийного оборудования</td><td>03.03.2026</td></tr>
-            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">95.12</span></td><td>Ремонт коммуникационного оборудования</td><td>03.03.2026</td></tr>
+            <tr style="background:#eff6ff"><td><span class="badge-main">Основной</span></td><td><span class="code">62.01</span></td><td>Разработка компьютерного программного обеспечения</td><td>03.03.2026</tr>
+            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">70.22</span></td><td>Консультирование по вопросам коммерческой деятельности и управления</td><td>03.03.2026</tr>
+            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">73.20</span></td><td>Исследование конъюнктуры рынка и изучение общественного мнения</td><td>03.03.2026</tr>
+            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">82.99</span></td><td>Деятельность по предоставлению прочих вспомогательных услуг для бизнеса</td><td>03.03.2026</tr>
+            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">62.02</span></td><td>Деятельность консультативная и работы в области компьютерных технологий</td><td>03.03.2026</tr>
+            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">18.12</span></td><td>Прочие виды полиграфической деятельности</td><td>03.03.2026</tr>
+            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">18.14</span></td><td>Деятельность брошюровочно-переплетная и отделочная</td><td>03.03.2026</tr>
+            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">53.20</span></td><td>Деятельность почтовой связи прочая и курьерская деятельность</td><td>03.03.2026</tr>
+            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">58.29</span></td><td>Издание прочих программных продуктов</td><td>03.03.2026</tr>
+            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">74.10</span></td><td>Деятельность специализированная в области дизайна</td><td>03.03.2026</tr>
+            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">95.11</span></td><td>Ремонт компьютеров и периферийного оборудования</td><td>03.03.2026</tr>
+            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">95.12</span></td><td>Ремонт коммуникационного оборудования</td><td>03.03.2026</tr>
           </tbody>
         </table>
         <p style="margin-top:1.2rem; font-size:0.8rem"><i class="fas fa-info-circle"></i> Все сведения внесены в ЕГРИП 03.03.2026. ГРН записи: 326723200024252.</p>
@@ -612,39 +581,40 @@
     </div>
   </section>
 
-  <!-- Кейсы (проекты) — акцент на реальных внедрениях -->
-  <section id="cases">
+  <!-- Услуги -->
+  <section id="services">
     <div class="container">
-      <h2>Реализованные проекты</h2>
-      <p class="section-sub">Примеры, где удалось пройти путь от идеи до результата</p>
-      <div class="projects-grid">
-        <div class="project-card">
-          <i class="fas fa-chart-line"></i>
-          <h3>Оптимизация логистической компании</h3>
-          <p>Анализ процессов, проектирование новой маршрутной сети, внедрение системы контроля. Сокращение издержек на 22%.</p>
-        </div>
-        <div class="project-card">
-          <i class="fas fa-building"></i>
-          <h3>Стратегия масштабирования для сети розничных магазинов</h3>
-          <p>Разработка финансовой модели, автоматизация учёта, открытие 3 новых точек за год. Рост выручки на 35%.</p>
-        </div>
-        <div class="project-card">
-          <i class="fas fa-microchip"></i>
-          <h3>Внедрение цифрового производства</h3>
-          <p>От проектирования производственной линии до запуска ERP-системы. Снижение времени цикла на 40%.</p>
-        </div>
+      <h2>Основные услуги</h2>
+      <p class="section-sub">Что я предлагаю как бизнес-консультант</p>
+      <div class="services-grid">
+        <div class="service-card"><div class="service-icon"><i class="fas fa-chart-line"></i></div><h3>Консалтинг бизнес-процессов</h3><div class="service-desc">Аудит, оптимизация, регламентация. Нахожу узкие места, устраняю потери, выстраиваю прозрачные процессы.</div></div>
+        <div class="service-card"><div class="service-icon"><i class="fas fa-rocket"></i></div><h3>Стратегия развития компаний</h3><div class="service-desc">Разработка стратегии масштабирования, выход на новые рынки, внедрение KPI и систем управления.</div></div>
+        <div class="service-card"><div class="service-icon"><i class="fas fa-laptop-code"></i></div><h3>Разработка ПО под задачи бизнеса</h3><div class="service-desc">Создаю заказное ПО (CRM, учётные системы, телеграм-боты) для автоматизации найденных решений.</div></div>
       </div>
     </div>
   </section>
 
-  <!-- Контакты (основная секция) -->
+  <!-- Кейсы -->
+  <section id="cases">
+    <div class="container">
+      <h2>Реализованные проекты</h2>
+      <p class="section-sub">Примеры внедрений, которые принесли пользу бизнесу</p>
+      <div class="projects-grid">
+        <div class="project-card"><i class="fas fa-chart-simple" style="font-size:2rem; color:#2563eb"></i><h3>Оптимизация логистической компании</h3><div class="project-desc">Сокращение маршрутных потерь на 22%, внедрение системы контроля затрат.</div></div>
+        <div class="project-card"><i class="fas fa-building" style="font-size:2rem; color:#2563eb"></i><h3>Стратегия масштабирования для сети магазинов</h3><div class="project-desc">Разработана финансовая модель, автоматизирован учёт, открыты 3 новые точки.</div></div>
+        <div class="project-card"><i class="fas fa-tasks" style="font-size:2rem; color:#2563eb"></i><h3>Внедрение KPI и регламентов в IT-команде</h3><div class="project-desc">Рост скорости разработки на 30% за счёт чётких процессов.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Контакты (основная секция, email обновлён) -->
   <section id="contact">
     <div class="container">
       <h2>Свяжитесь со мной</h2>
-      <p class="section-sub">Проконсультирую бесплатно, помогу сформулировать задачу и предложу первые шаги к результату</p>
+      <p class="section-sub">Проконсультирую бесплатно, проведу первичную диагностику ваших бизнес-процессов</p>
       <div class="contact-cards">
         <div class="contact-item"><i class="fas fa-phone-alt"></i><h4>Телефон</h4><a href="tel:+79324846044">+7-932-484-60-44</a></div>
-        <div class="contact-item"><i class="fas fa-envelope"></i><h4>Эл. почта</h4><a href="mailto:i1.ip.gn@mail.ru">i1.ip.gn@mail.ru</a></div>
+        <div class="contact-item"><i class="fas fa-envelope"></i><h4>Эл. почта</h4><a href="mailto:i1.vus.su@mail.ru">i1.vus.su@mail.ru</a></div>
         <div class="contact-item"><i class="fab fa-telegram"></i><h4>Telegram</h4><a href="https://t.me/G_Nikolaevich" target="_blank" rel="noopener noreferrer">@G_Nikolaevich</a></div>
         <div class="contact-item"><i class="fab fa-whatsapp"></i><h4>WhatsApp</h4><a href="https://wa.me/79324846044" target="_blank" rel="noopener noreferrer">Написать в WhatsApp</a></div>
       </div>
@@ -660,14 +630,13 @@
     <p>© 2026 ИП Чащин Геннадий Николаевич. Все права защищены.</p>
     <p style="margin-top:0.5rem; font-size:0.8rem;">ОГРНИП 326723200024252 | ИНН 720207889109 | Дата регистрации в ЕГРИП: 03.03.2026</p>
     <div class="legal-note">
-      <p><i class="fas fa-database"></i> Персональные данные не собираются и не хранятся. Этот сайт не использует cookie для отслеживания.</p>
-      <p><strong>Ограничение ответственности:</strong> ИП Чащин Г.Н. не несёт ответственности за любые действия, совершённые пользователем на основании информации, представленной на данном сайте. Все решения следует принимать после личной консультации.</p>
+      <p><i class="fas fa-shield-alt"></i> Персональные данные не собираются и не хранятся.</p>
+      <p><strong>Ограничение ответственности:</strong> ИП Чащин Г.Н. не несёт ответственности за любые действия, совершённые пользователем на основании информации, представленной на данном сайте.</p>
     </div>
   </div>
 </footer>
 
 <script>
-  // копирование номера
   const copyBtn = document.getElementById('copyPhoneBtn');
   if (copyBtn) {
     copyBtn.addEventListener('click', (e) => {
@@ -681,7 +650,6 @@
     });
   }
 
-  // подсветка меню при скролле
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
   function setActive() {
