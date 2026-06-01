@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="ИП Чащин Геннадий Николаевич – консалтинг по бизнес-процессам и развитию компаний. Оптимизация, стратегия, автоматизация. 30+ лет опыта.">
+  <meta name="description" content="ИП Чащин Геннадий Николаевич – консалтинг по бизнес-процессам и развитию компаний. Реальные кейсы: формирование команд с нуля, выход на безубыточность, антикризисные продажи, account management.">
 
   <!-- === ЗАГОЛОВКИ БЕЗОПАСНОСТИ === -->
   <meta http-equiv="X-Frame-Options" content="DENY">
@@ -19,7 +19,7 @@
   ">
   <meta name="referrer" content="strict-origin-when-cross-origin">
 
-  <title>ИП Чащин Г.Н. | Консалтинг бизнес-процессов и развитие компаний</title>
+  <title>ИП Чащин Г.Н. | Консалтинг, развитие, антикризис</title>
   <!-- Google Fonts + Font Awesome 6 -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -394,13 +394,13 @@
     /* услуги и кейсы */
     .services-grid, .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
       gap: 2rem;
     }
     .service-card, .project-card {
       background: white;
       border-radius: 24px;
-      padding: 1.5rem;
+      padding: 1.8rem;
       border: 1px solid #e2e8f0;
       transition: 0.2s;
     }
@@ -411,6 +411,9 @@
     }
     .service-icon { font-size: 2.2rem; color: #2563eb; margin-bottom: 1rem; }
     .service-card h3 { font-size: 1.4rem; margin-bottom: 0.75rem; }
+    .project-card i { font-size: 2rem; color: #2563eb; margin-bottom: 1rem; display: block; }
+    .project-card h3 { font-size: 1.4rem; margin-bottom: 0.75rem; }
+    .project-card p { color: #334155; line-height: 1.5; }
 
     /* контакты основная секция */
     .contact-cards {
@@ -466,6 +469,7 @@
     @media (max-width: 480px) {
       .hero-buttons .btn { padding: 0.5rem 1.2rem; font-size: 0.85rem; }
       .bottom-contact-bar { gap: 0.8rem; }
+      .projects-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -494,7 +498,7 @@
   <i class="fas fa-stamp"></i> Печать ИП — действительна! <i class="fas fa-check-circle"></i> Все документы оформлены официально, регистрация в ЕГРИП подтверждена.
 </div>
 
-<!-- Нижняя фиксированная панель контактов (email обновлён) -->
+<!-- Нижняя фиксированная панель контактов -->
 <div class="bottom-contact-bar">
   <a href="tel:+79324846044"><i class="fas fa-phone-alt"></i> +7-932-484-60-44</a>
   <a href="mailto:i1.vus.su@mail.ru"><i class="fas fa-envelope"></i> i1.vus.su@mail.ru</a>
@@ -562,18 +566,18 @@
         <table class="okved-table">
           <thead><tr><th>Тип</th><th>Код</th><th>Наименование</th><th>Дата</th></tr></thead>
           <tbody>
-            <tr style="background:#eff6ff"><td><span class="badge-main">Основной</span></td><td><span class="code">62.01</span></td><td>Разработка компьютерного программного обеспечения</td><td>03.03.2026</tr>
-            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">70.22</span></td><td>Консультирование по вопросам коммерческой деятельности и управления</td><td>03.03.2026</tr>
-            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">73.20</span></td><td>Исследование конъюнктуры рынка и изучение общественного мнения</td><td>03.03.2026</tr>
-            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">82.99</span></td><td>Деятельность по предоставлению прочих вспомогательных услуг для бизнеса</td><td>03.03.2026</tr>
-            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">62.02</span></td><td>Деятельность консультативная и работы в области компьютерных технологий</td><td>03.03.2026</tr>
-            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">18.12</span></td><td>Прочие виды полиграфической деятельности</td><td>03.03.2026</tr>
-            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">18.14</span></td><td>Деятельность брошюровочно-переплетная и отделочная</td><td>03.03.2026</tr>
-            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">53.20</span></td><td>Деятельность почтовой связи прочая и курьерская деятельность</td><td>03.03.2026</tr>
-            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">58.29</span></td><td>Издание прочих программных продуктов</td><td>03.03.2026</tr>
-            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">74.10</span></td><td>Деятельность специализированная в области дизайна</td><td>03.03.2026</tr>
-            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">95.11</span></td><td>Ремонт компьютеров и периферийного оборудования</td><td>03.03.2026</tr>
-            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">95.12</span></td><td>Ремонт коммуникационного оборудования</td><td>03.03.2026</tr>
+            <tr style="background:#eff6ff"><td><span class="badge-main">Основной</span></td><td><span class="code">62.01</span></td><td>Разработка компьютерного программного обеспечения</td><td>03.03.2026</td></tr>
+            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">70.22</span></td><td>Консультирование по вопросам коммерческой деятельности и управления</td><td>03.03.2026</td></tr>
+            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">73.20</span></td><td>Исследование конъюнктуры рынка и изучение общественного мнения</td><td>03.03.2026</td></tr>
+            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">82.99</span></td><td>Деятельность по предоставлению прочих вспомогательных услуг для бизнеса</td><td>03.03.2026</td></tr>
+            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">62.02</span></td><td>Деятельность консультативная и работы в области компьютерных технологий</td><td>03.03.2026</td></tr>
+            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">18.12</span></td><td>Прочие виды полиграфической деятельности</td><td>03.03.2026</td></tr>
+            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">18.14</span></td><td>Деятельность брошюровочно-переплетная и отделочная</td><td>03.03.2026</td></tr>
+            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">53.20</span></td><td>Деятельность почтовой связи прочая и курьерская деятельность</td><td>03.03.2026</td></tr>
+            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">58.29</span></td><td>Издание прочих программных продуктов</td><td>03.03.2026</td></tr>
+            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">74.10</span></td><td>Деятельность специализированная в области дизайна</td><td>03.03.2026</td></tr>
+            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">95.11</span></td><td>Ремонт компьютеров и периферийного оборудования</td><td>03.03.2026</td></tr>
+            <tr><td><span class="badge-add">Доп.</span></td><td><span class="code">95.12</span></td><td>Ремонт коммуникационного оборудования</td><td>03.03.2026</td></tr>
           </tbody>
         </table>
         <p style="margin-top:1.2rem; font-size:0.8rem"><i class="fas fa-info-circle"></i> Все сведения внесены в ЕГРИП 03.03.2026. ГРН записи: 326723200024252.</p>
@@ -594,20 +598,32 @@
     </div>
   </section>
 
-  <!-- Кейсы -->
+  <!-- НОВЫЕ ПРОДАЮЩИЕ КЕЙСЫ (обновлены) -->
   <section id="cases">
     <div class="container">
       <h2>Реализованные проекты</h2>
-      <p class="section-sub">Примеры внедрений, которые принесли пользу бизнесу</p>
+      <p class="section-sub">Результаты, которые говорят сами за себя</p>
       <div class="projects-grid">
-        <div class="project-card"><i class="fas fa-chart-simple" style="font-size:2rem; color:#2563eb"></i><h3>Оптимизация логистической компании</h3><div class="project-desc">Сокращение маршрутных потерь на 22%, внедрение системы контроля затрат.</div></div>
-        <div class="project-card"><i class="fas fa-building" style="font-size:2rem; color:#2563eb"></i><h3>Стратегия масштабирования для сети магазинов</h3><div class="project-desc">Разработана финансовая модель, автоматизирован учёт, открыты 3 новые точки.</div></div>
-        <div class="project-card"><i class="fas fa-tasks" style="font-size:2rem; color:#2563eb"></i><h3>Внедрение KPI и регламентов в IT-команде</h3><div class="project-desc">Рост скорости разработки на 30% за счёт чётких процессов.</div></div>
+        <div class="project-card">
+          <i class="fas fa-users"></i>
+          <h3>Формирование команды с «нуля» до безубыточности</h3>
+          <p>Для двух крупных корпораций построил новые продуктовые направления: подбор, обучение, выстраивание процессов. Проекты прошли <strong>точку безубыточности</strong> и вышли на плановые согласованные показатели. Результат — стабильный рост и выполнение KPI без привлечения внешних подрядчиков.</p>
+        </div>
+        <div class="project-card">
+          <i class="fas fa-chart-line"></i>
+          <h3>Антикризисные продажи в период ковида</h3>
+          <p>Оптимизировал направление продаж в сложной экономической обстановке. Перестроил воронки, внедрил удалённые каналы, обучил команду. <strong>Выход на крупные проекты</strong> с федеральными заказчиками, рост выручки на фоне падения рынка.</p>
+        </div>
+        <div class="project-card">
+          <i class="fas fa-handshake"></i>
+          <h3>Account management для новых заказчиков</h3>
+          <p>В крупной компании запустил направление работы с ключевыми клиентами: разработал регламенты, CRM-схемы, стратегию удержания. Реализованы <strong>успешные профильные проекты</strong> с долгосрочными контрактами и повторными продажами.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Контакты (основная секция, email обновлён) -->
+  <!-- Контакты (основная секция) -->
   <section id="contact">
     <div class="container">
       <h2>Свяжитесь со мной</h2>
