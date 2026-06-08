@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="description" content="ИП Чащин Геннадий Николаевич – консалтинг по бизнес-процессам и развитию компаний. Реальные кейсы: формирование команд с нуля, выход на безубыточность, антикризисные продажи, account management.">
 
+  <!-- Favicon: иконка "i1" -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%232563eb'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='36' font-weight='bold' font-family='Arial, sans-serif'%3Ei1%3C/text%3E%3C/svg%3E">
+  <link rel="shortcut icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%232563eb'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='36' font-weight='bold' font-family='Arial, sans-serif'%3Ei1%3C/text%3E%3C/svg%3E">
+
   <!-- === ЗАГОЛОВКИ БЕЗОПАСНОСТИ === -->
   <meta http-equiv="X-Frame-Options" content="DENY">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
@@ -86,7 +90,7 @@
       max-width: 800px;
     }
 
-    /* header sticky */
+    /* header sticky + бургер */
     .header {
       position: fixed;
       top: 0;
@@ -125,11 +129,28 @@
       opacity: 0.8;
     }
 
+    /* бургер-кнопка (по умолчанию скрыта на десктопе) */
+    .burger {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #1e293b;
+      transition: 0.2s;
+      z-index: 102;
+    }
+    .burger:hover {
+      color: #2563eb;
+    }
+
+    /* навигационное меню */
     .nav-links {
       display: flex;
       gap: 2rem;
       flex-wrap: wrap;
       list-style: none;
+      transition: all 0.3s ease;
     }
     .nav-links a {
       text-decoration: none;
@@ -457,19 +478,85 @@
       font-weight: 600;
     }
 
+    /* ===== АДАПТИВ: бургер-меню ===== */
     @media (max-width: 780px) {
-      body { padding-top: 100px; padding-bottom: 60px; }
-      .header { padding: 0.7rem 0; }
-      .info-strip { top: 58px; font-size: 0.75rem; }
-      .hero h1 { font-size: 2.2rem; }
-      section { padding: 3rem 0; }
-      .bottom-contact-bar { gap: 1rem; font-size: 0.75rem; padding: 0.5rem; }
-      .back-to-home { bottom: 5rem; right: 1rem; width: 42px; height: 42px; font-size: 1.2rem; }
+      body {
+        padding-top: 100px;
+        padding-bottom: 60px;
+      }
+      .header {
+        padding: 0.7rem 0;
+      }
+      .info-strip {
+        top: 58px;
+        font-size: 0.75rem;
+      }
+      .burger {
+        display: block;
+      }
+      .nav-links {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: auto;
+        background: rgba(255, 255, 255, 0.97);
+        backdrop-filter: blur(12px);
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 2rem 1rem;
+        transition: left 0.3s ease;
+        box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+        z-index: 99;
+        border-bottom: 1px solid #e2e8f0;
+      }
+      .nav-links.active {
+        left: 0;
+      }
+      .nav-links li {
+        width: 100%;
+        text-align: center;
+      }
+      .nav-links a {
+        display: block;
+        padding: 0.5rem;
+        font-size: 1.1rem;
+      }
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      section {
+        padding: 3rem 0;
+      }
+      .bottom-contact-bar {
+        gap: 1rem;
+        font-size: 0.75rem;
+        padding: 0.5rem;
+      }
+      .back-to-home {
+        bottom: 5rem;
+        right: 1rem;
+        width: 42px;
+        height: 42px;
+        font-size: 1.2rem;
+      }
+      .container {
+        padding: 0 1.2rem;
+      }
     }
+
     @media (max-width: 480px) {
-      .hero-buttons .btn { padding: 0.5rem 1.2rem; font-size: 0.85rem; }
-      .bottom-contact-bar { gap: 0.8rem; }
-      .projects-grid { grid-template-columns: 1fr; }
+      .hero-buttons .btn {
+        padding: 0.5rem 1.2rem;
+        font-size: 0.85rem;
+      }
+      .bottom-contact-bar {
+        gap: 0.8rem;
+      }
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -478,11 +565,14 @@
 <!-- Кнопка наверх -->
 <a href="#home" class="back-to-home" title="На главную"><i class="fas fa-arrow-up"></i></a>
 
-<!-- Шапка (sticky) -->
+<!-- Шапка (sticky) с бургером -->
 <header class="header">
   <div class="container nav-bar">
     <a href="#home" class="logo">ИП <span>Чащин Г.Н.</span></a>
-    <ul class="nav-links">
+    <button class="burger" id="burgerBtn" aria-label="Меню">
+      <i class="fas fa-bars"></i>
+    </button>
+    <ul class="nav-links" id="navLinks">
       <li><a href="#home">Главная</a></li>
       <li><a href="#about">О предпринимателе</a></li>
       <li><a href="#okved">ОКВЭД</a></li>
@@ -598,7 +688,7 @@
     </div>
   </section>
 
-  <!-- НОВЫЕ ПРОДАЮЩИЕ КЕЙСЫ (обновлены) -->
+  <!-- Обновлённые продающие кейсы -->
   <section id="cases">
     <div class="container">
       <h2>Реализованные проекты</h2>
@@ -653,6 +743,7 @@
 </footer>
 
 <script>
+  // Копирование номера телефона
   const copyBtn = document.getElementById('copyPhoneBtn');
   if (copyBtn) {
     copyBtn.addEventListener('click', (e) => {
@@ -666,8 +757,36 @@
     });
   }
 
+  // Бургер-меню
+  const burger = document.getElementById('burgerBtn');
+  const navLinks = document.getElementById('navLinks');
+  if (burger && navLinks) {
+    burger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      // меняем иконку бургера на крестик (опционально)
+      const icon = burger.querySelector('i');
+      if (navLinks.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+      } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+    });
+    // Закрываем меню при клике на ссылку
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        const icon = burger.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      });
+    });
+  }
+
+  // Подсветка активного пункта меню при скролле
   const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a');
+  const navLinksItems = document.querySelectorAll('.nav-links a');
   function setActive() {
     let current = '';
     const scrollPos = window.scrollY + 140;
@@ -675,7 +794,7 @@
       const top = section.offsetTop, height = section.clientHeight;
       if (scrollPos >= top && scrollPos < top + height) current = section.getAttribute('id');
     });
-    navLinks.forEach(link => {
+    navLinksItems.forEach(link => {
       link.style.color = '';
       link.style.fontWeight = '500';
       if (link.getAttribute('href') === `#${current}`) {
